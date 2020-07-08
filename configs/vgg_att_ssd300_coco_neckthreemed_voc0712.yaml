@@ -1,0 +1,29 @@
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    PRETRAINED: True
+  NECK:
+    NAME: 'neckthreemed'
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    BOXES_PER_LOCATION: [6, 6, 6, 6, 4, 4]
+    ASPECT_RATIOS: [[2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_valminusminival")
+  TEST: ("coco_2014_minival", )
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3 # 4e-3 for one GPU
+  WARMUP_ITERS: 2800
+  WARMUP_FACTOR: 0.03333
+
+
+OUTPUT_DIR: 'outputs/vgg_att_ssd300_coco_neckthreemed_more_prior_lr4_1x140k'

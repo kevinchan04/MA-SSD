@@ -1,0 +1,25 @@
+MODEL:
+  NUM_CLASSES: 21
+  BACKBONE:
+    PRETRAINED: True
+  NECK:
+    NAME: 'neckthreemed'
+  PRIORS:
+    BOXES_PER_LOCATION: [6, 6, 6, 6, 4, 4]
+    ASPECT_RATIOS: [[2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("voc_2007_trainval", "voc_2012_trainval")
+  TEST: ("voc_2007_test", )
+SOLVER:
+  MAX_ITER: 140000
+  LR_STEPS: [84000, 112000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 4e-3 # 4e-3 for one GPU
+  WARMUP_ITERS: 2800
+  WARMUP_FACTOR: 0.03333
+
+
+OUTPUT_DIR: 'outputs/vgg_att_ssd300_voc0712_neckthreemed_more_prior_lr4_1x140k'
