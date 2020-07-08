@@ -33,7 +33,7 @@ This repository implements MA-SSD (Multi Attention SSD for Fast Detection of Sma
 ### Installation Steps
 
 ```bash
-git clone https://github.com/ACCV-501/ACCV-MA-SSD
+git clone https://github.com/anonymousACCV501/ACCV-MA-SSD.git
 cd ACCV-MA-SSD
 # Required packages: torch torchvision yacs tqdm opencv-python vizer
 pip install -r requirements.txt
@@ -90,7 +90,7 @@ Where `COCO_ROOT` default is `datasets` folder in current project, you can creat
 
 ```bash
 # for example, evaluate SSD300:
-python test.py --config-file configs/vgg_att_ssd300_neckthreemed_voc0712.yaml --ckpt https://github.com/ACCV-501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_voc0712_neckthreemed.pth
+python test.py --config-file configs/vgg_att_ssd300_neckthreemed_voc0712.yaml --ckpt https://github.com/anonymousACCV501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_voc0712_neckthreemed.pth
 ```
 
 ### Multi-GPU evaluating
@@ -98,14 +98,14 @@ python test.py --config-file configs/vgg_att_ssd300_neckthreemed_voc0712.yaml --
 ```bash
 # for example, evaluate SSD300 with 4 GPUs:
 export NGPUS=4
-python -m torch.distributed.launch --nproc_per_node=$NGPUS test.py --config-file configs/vgg_ssd300_voc0712.yaml --ckpt https://github.com/ACCV-501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_voc0712_neckthreemed.pth
+python -m torch.distributed.launch --nproc_per_node=$NGPUS test.py --config-file configs/vgg_ssd300_voc0712.yaml --ckpt https://github.com/anonymousACCV501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_voc0712_neckthreemed.pth
 ```
 
 ## Demo
 
 Predicting image in a folder is simple, it will calculate avgerage speed of inference(FPS):
 ```bash
-python demo.py --config-file configs/vgg_ssd300_voc0712.yaml --images_dir demo --ckpt https://github.com/ACCV-501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_voc0712_neckthreemed.pth
+python demo.py --config-file configs/vgg_ssd300_voc0712.yaml --images_dir demo --ckpt https://github.com/anonymousACCV501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_voc0712_neckthreemed.pth
 ```
 Then it will download and cache `vgg_att_ssd300_voc0712_neckthreemed.pth` automatically and predicted images with boxes, scores and label names will saved to `demo/result` folder by default.
 
@@ -147,14 +147,14 @@ The configuration files that I provide assume that we are running on single GPU.
 
 | Backbone       | Neck     | Input Size  |          box AP                  | Model Size |  Download |
 | :------------: | :----------:| :----------:|   :--------------------------:   | :--------: | :-------: |
-|  VGG16         | neckthreemed|     300     |          26.5                    |  372MB     | [model](https://github.com/ACCV-501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_coco_neckthreemed.pth)   |
+|  VGG16         | neckthreemed|     300     |          26.5                    |  372MB     | [model](https://github.com/anonymousACCV501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_coco_neckthreemed.pth)   |
 
 
 ### PASCAL VOC:
 
 | Backbone         | Neck     | Input Size  |          mAP                     | Model Size | Download  |
 | :--------------: | :----------:| :----------:|   :--------------------------:   | :--------: | :-------: |
-|  VGG16           | neckthreemed|     300     |          79.9                    |   307MB    | [model](https://github.com/ACCV-501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_voc0712_neckthreemed.pth)  |
+|  VGG16           | neckthreemed|     300     |          79.9                    |   307MB    | [model](https://github.com/anonymousACCV501/ACCV-MA-SSD/releases/download/1.0/vgg_att_ssd300_voc0712_neckthreemed.pth)  |
 
 `neckthreemed` is multi attention with feature fusion neck. Please refer to paper with more details about comparsion with other methods.
 
