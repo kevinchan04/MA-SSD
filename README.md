@@ -1,7 +1,7 @@
 # The pytorch implement of MA-SSD
 
 
-This repository implements MA-SSD (Multi Attention SSD for Fast Detection of Small Objects). This paper is under review in ACCV 2020.
+This repository implements MA-SSD (Multi Attention SSD for Fast Detection of Small Objects). 
  The implementation is based on the projects [lufficc/SSD](https://github.com/lufficc/SSD).
 
 
