@@ -12,7 +12,7 @@ This repository implements MA-SSD (Multi Attention SSD for Fast Detection of Sma
 
 ## Experiment result
 
-![SSD table](figures/SSD_results_table.jpg)
+![SSD table](figures/MASSD results.PNG)
 
 
 ## New Features in This Implementation
