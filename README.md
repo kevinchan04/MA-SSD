@@ -10,6 +10,10 @@ This repository implements MA-SSD (Multi Attention SSD for Fast Detection of Sma
 | ![massd1](figures/000846massd.jpg) | ![ssd1](figures/000846ssd.jpg) |
 | ![massd2](figures/001275massd.jpg) | ![ssd2](figures/001275ssd.jpg) |
 
+## Experiment result
+
+![SSD table](figures/SSD_results_table.jpg)
+
 
 ## New Features in This Implementation
 - **Fast Small Object Detection** MA-SSD outperforms SSD on detection especially in small object detection task. MA-SSD runs over 100 FPS on single RTX 2080 Ti GPU. In Quadro P2000 GPU, it also runs over 23 FPS(SSD is 28 FPS).
